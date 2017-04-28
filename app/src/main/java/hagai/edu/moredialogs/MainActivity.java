@@ -4,23 +4,25 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LoginFragment.OnUserLoggedInListener {
     ConstraintLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        layout = (ConstraintLayout)findViewById(R.id.constraint);
+        layout = (ConstraintLayout) findViewById(R.id.constraint);
 
     }
 
     public void showDialog(View view) {
+
 //        AlertDialog.Builder bulider = new AlertDialog.Builder(this);
 //        bulider.setCancelable(false);
 //        View v = getLayoutInflater().inflate(R.layout.dialog_login,layout,false);
@@ -44,8 +46,12 @@ public class MainActivity extends AppCompatActivity {
 //        dialog.show();
 
         LoginFragment f = new LoginFragment();
-        f.show(getSupportFragmentManager(),"loginDialog");
+        f.show(getSupportFragmentManager(), "loginDialog");
 
+
+    }
+
+    public void onUserLoggedIn(String ss) {
 
     }
 }
