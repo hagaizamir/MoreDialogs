@@ -21,27 +21,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showDialog(View view) {
-        AlertDialog.Builder bulider = new AlertDialog.Builder(this);
-        bulider.setCancelable(false);
-        View v = getLayoutInflater().inflate(R.layout.dialog_login,layout,false);
-       final EditText etUserName = (EditText) v.findViewById(R.id.etUserName);
-        EditText etPassword = (EditText) v.findViewById(R.id.etPassword);
-        Button btnCancel = (Button) v.findViewById(R.id.btnCancel);
-        Button btnLogin = (Button) v.findViewById(R.id.btnLog);
+//        AlertDialog.Builder bulider = new AlertDialog.Builder(this);
+//        bulider.setCancelable(false);
+//        View v = getLayoutInflater().inflate(R.layout.dialog_login,layout,false);
+//       final EditText etUserName = (EditText) v.findViewById(R.id.etUserName);
+//        EditText etPassword = (EditText) v.findViewById(R.id.etPassword);
+//        Button btnCancel = (Button) v.findViewById(R.id.btnCancel);
+//        Button btnLogin = (Button) v.findViewById(R.id.btnLog);
+//
+//
+//        bulider.setView(v);
+//
+//        final  AlertDialog dialog = bulider.create();
+//        btnLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(MainActivity.this , etUserName.getText().toString(),Toast.LENGTH_SHORT).show();
+//                dialog.dismiss();
+//            }
+//        });
+//
+//        dialog.show();
 
-
-        bulider.setView(v);
-
-        final  AlertDialog dialog = bulider.create();
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this , etUserName.getText().toString(),Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
+        LoginFragment f = new LoginFragment();
+        f.show(getSupportFragmentManager(),"loginDialog");
 
 
     }
